@@ -1,15 +1,15 @@
-// Explore button (safe check)
+// Explore button
 const exploreBtn = document.getElementById("exploreBtn");
 if (exploreBtn) {
-    exploreBtn.addEventListener("click", function () {
-        document.getElementById("about").scrollIntoView({
+    exploreBtn.addEventListener("click", () => {
+        document.getElementById("about")?.scrollIntoView({
             behavior: "smooth"
         });
     });
 }
 
 // Contact form
-const contactForm = document.querySelector("form");
+const contactForm = document.getElementById("contactForm");
 if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -18,8 +18,8 @@ if (contactForm) {
     });
 }
 
-// Visitor Counter
-let visits = localStorage.getItem("visits") || 0;
+// Visitor Counter (better + safe)
+let visits = Number(localStorage.getItem("visits") || 0);
 visits++;
 localStorage.setItem("visits", visits);
 
@@ -28,7 +28,10 @@ if (visitorElement) {
     visitorElement.textContent = visits;
 }
 
-// Dark / Light Mode (FIXED)
+// Theme system
+const themeToggle = document.getElementById("themeToggle");
+
+// apply saved theme
 function applyTheme(theme) {
     if (theme === "light") {
         document.body.classList.add("light");
@@ -37,9 +40,7 @@ function applyTheme(theme) {
     }
 }
 
-// Toggle button (matches your HTML id="themeToggle")
-const themeToggle = document.getElementById("themeToggle");
-
+// toggle theme
 if (themeToggle) {
     themeToggle.addEventListener("click", () => {
         const isLight = document.body.classList.toggle("light");
@@ -47,9 +48,8 @@ if (themeToggle) {
     });
 }
 
-// Load saved theme
-const savedTheme = localStorage.getItem("theme");
-applyTheme(savedTheme);
+// load saved theme
+applyTheme(localStorage.getItem("theme"));
 
 // Live Clock
 function updateClock() {

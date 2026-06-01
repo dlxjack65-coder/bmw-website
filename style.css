@@ -1,259 +1,174 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-body{
-    background:#111;
-    color:white;
+/* BODY */
+body {
+    background: #0b0f1a;
+    color: #fff;
+    transition: 0.4s;
 }
 
-header{
-    background:#000;
-    position:sticky;
-    top:0;
-    z-index:1000;
+/* LIGHT MODE */
+body.light {
+    background: #f5f7ff;
+    color: #111;
 }
 
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 50px;
+/* HEADER */
+header {
+    position: sticky;
+    top: 0;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    padding: 10px 20px;
 }
 
-.logo{
-    color:#00aaff;
-    font-size:30px;
-    font-weight:bold;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav ul{
-    display:flex;
-    list-style:none;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 18px;
 }
 
-nav ul li{
-    margin-left:20px;
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
 }
 
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    transition:0.3s;
+nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
 }
 
-nav ul li a:hover{
-    color:#00aaff;
+nav ul li a:hover {
+    color: #2d7dff;
 }
 
-.hero{
-    height:100vh;
-    background:url("https://images.unsplash.com/photo-1503376780353-7e6692767b70")
-    center/cover no-repeat;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+/* TOP TOOLS */
+.top-tools {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
 }
 
-.hero-content{
-    background:rgba(0,0,0,0.6);
-    padding:30px;
-    border-radius:10px;
+/* HERO */
+.hero {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(120deg, rgba(45,125,255,0.2), transparent);
 }
 
-.hero h1{
-    font-size:3rem;
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
-.hero p{
-    margin:15px 0;
+.hero button {
+    padding: 10px 20px;
+    border: none;
+    background: #2d7dff;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
 }
 
-button{
-    padding:12px 25px;
-    border:none;
-    background:#00aaff;
-    color:white;
-    cursor:pointer;
-    border-radius:5px;
-    transition:0.3s;
+.hero button:hover {
+    transform: scale(1.05);
 }
 
-button:hover{
-    transform:scale(1.1);
+/* SECTIONS */
+section {
+    padding: 50px 20px;
+    text-align: center;
 }
 
-.about,
-.gallery,
-.contact{
-    padding:80px 20px;
-    text-align:center;
+/* GALLERY */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.about h2,
-.gallery h2,
-.contact h2{
-    color:#00aaff;
-    margin-bottom:20px;
+.gallery-container img {
+    width: 100%;
+    border-radius: 12px;
+    transition: 0.3s;
 }
 
-.gallery-container{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:20px;
+.gallery-container img:hover {
+    transform: scale(1.05);
 }
 
-.gallery img{
-    width:300px;
-    border-radius:10px;
-    transition:0.4s;
+/* CONTACT FORM */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: auto;
 }
 
-.gallery img:hover{
-    transform:scale(1.05);
+form input,
+form textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
 }
 
-form{
-    max-width:500px;
-    margin:auto;
-    display:flex;
-    flex-direction:column;
-    gap:15px;
+form button {
+    padding: 10px;
+    border: none;
+    background: #2d7dff;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-input,
-textarea{
-    padding:12px;
-    border:none;
-    border-radius:5px;
+/* VISITOR COUNTER */
+.counter h3 {
+    font-size: 2rem;
+    margin-top: 10px;
+    color: #2d7dff;
 }
 
-footer{
-    background:#000;
-    text-align:center;
-    padding:20px;
+/* FOOTER */
+footer {
+    padding: 20px;
+    text-align: center;
+    background: rgba(0,0,0,0.7);
+    margin-top: 20px;
 }
 
-@media(max-width:768px){
-
-    nav{
-        flex-direction:column;
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
     }
 
-    nav ul{
-        margin-top:15px;
+    .hero h1 {
+        font-size: 1.8rem;
     }
-
-    .hero h1{
-        font-size:2rem;
-    }
-
-    .gallery img{
-        width:90%;
-    }
-}.counter{
-    text-align:center;
-    padding:60px 20px;
-}
-
-.counter h2{
-    color:#00aaff;
-    margin-bottom:10px;
-}
-
-.counter h3{
-    font-size:40px;
-    font-weight:bold;
-}
-.top-tools{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:20px;
-    padding:15px;
-    background:#1a1a1a;
-}
-
-#themeToggle{
-    padding:10px 15px;
-    background:#00aaff;
-    color:white;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-}
-
-#clock{
-    color:white;
-    font-size:18px;
-    font-weight:bold;
-}
-
-.light-mode{
-    background:white;
-    color:black;
-}
-
-.light-mode header,
-.light-mode footer{
-    background:#e5e5e5;
-}
-
-.light-mode .top-tools{
-    background:#f5f5f5;
-}
-
-.gallery img{
-    box-shadow:0 0 15px rgba(0,170,255,0.5);
-}
-.light-mode{
-    background:#ffffff;
-    color:#111111;
-}
-
-.light-mode .about,
-.light-mode .gallery,
-.light-mode .contact,
-.light-mode .counter{
-    background:#ffffff;
-    color:#111111;
-}
-
-.light-mode nav ul li a{
-    color:#111111;
-}
-
-.light-mode #clock{
-    color:#111111;
-}
-
-.light-mode input,
-.light-mode textarea{
-    background:#f0f0f0;
-    color:#111111;
-    border:1px solid #cccccc;
-}
-
-.light-mode .hero-content{
-    background:rgba(255,255,255,0.85);
-    color:#111111;
-}
-.light-mode nav ul li a{
-    color:#111111 !important;
-}
-
-.light-mode nav ul li a:hover{
-    color:#00aaff !important;
-}
-.light-mode header{
-    background:#ffffff;
-}
-
-.light-mode .logo{
-    color:#0077cc;
 }

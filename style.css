@@ -211,3 +211,35 @@ footer{
 .gallery img{
     box-shadow:0 0 15px rgba(0,170,255,0.5);
 }
+.light-mode{
+    background:#ffffff;
+    color:#111111;
+}
+
+.light-mode .about,
+.light-mode .gallery,
+.light-mode .contact,
+.light-mode .counter{
+    background:#ffffff;
+    color:#111111;
+}
+
+.light-mode nav ul li a{
+    color:#111111;
+}
+
+.light-mode #clock{
+    color:#111111;
+}
+
+.light-mode input,
+.light-mode textarea{
+    background:#f0f0f0;
+    color:#111111;
+    border:1px solid #cccccc;
+}
+
+.light-mode .hero-content{
+    background:rgba(255,255,255,0.85);
+    color:#111111;
+}

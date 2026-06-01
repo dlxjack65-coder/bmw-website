@@ -156,4 +156,17 @@ footer{
     .gallery img{
         width:90%;
     }
+}.counter{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.counter h2{
+    color:#00aaff;
+    margin-bottom:10px;
+}
+
+.counter h3{
+    font-size:40px;
+    font-weight:bold;
 }

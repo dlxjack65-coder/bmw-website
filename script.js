@@ -7,48 +7,39 @@ document.getElementById("exploreBtn").addEventListener("click", function () {
 document.getElementById("contactForm").addEventListener("submit", function (e) {
     e.preventDefault();
     alert("Thank you! Your message has been sent.");
-});let visits = localStorage.getItem("visits");
-
-if (!visits) {
-    visits = 0;
-}
-
-visits++;
-localStorage.setItem("visits", visits);
-
-document.getElementById("visitor-count").textContent = visits;
-// Dark / Light Mode
-
-const themeToggle = document.getElementById("themeToggle");
-
-themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("light-mode");
 });
 
-
-// Live Clock
-
-function updateClock() {
-    const now = new Date();
-
-    document.getElementById("clock").innerHTML =
-        now.toLocaleDateString() + " | " +
-        now.toLocaleTimeString();
-}
-
-setInterval(updateClock, 1000);
-updateClock();
-
-
 // Visitor Counter
-
-let visits = localStorage.getItem("visits");
-
-if (!visits) {
-    visits = 0;
-}
-
+let visits = localStorage.getItem("visits") || 0;
 visits++;
 localStorage.setItem("visits", visits);
 
-document.getElementById("visitor-count").textContent = visits;
+const visitorElement = document.getElementById("visitor-count");
+if (visitorElement) {
+    visitorElement.textContent = visits;
+}
+
+// Dark / Light Mode
+const themeToggle = document.getElementById("themeToggle");
+
+if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("light-mode");
+    });
+}
+
+// Live Clock
+function updateClock() {
+    const clock = document.getElementById("clock");
+
+    if (clock) {
+        const now = new Date();
+        clock.innerHTML =
+            now.toLocaleDateString() +
+            " | " +
+            now.toLocaleTimeString();
+    }
+}
+
+updateClock();
+setInterval(updateClock, 1000);

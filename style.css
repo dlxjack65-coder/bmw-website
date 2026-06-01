@@ -170,3 +170,44 @@ footer{
     font-size:40px;
     font-weight:bold;
 }
+.top-tools{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    padding:15px;
+    background:#1a1a1a;
+}
+
+#themeToggle{
+    padding:10px 15px;
+    background:#00aaff;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+#clock{
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.light-mode{
+    background:white;
+    color:black;
+}
+
+.light-mode header,
+.light-mode footer{
+    background:#e5e5e5;
+}
+
+.light-mode .top-tools{
+    background:#f5f5f5;
+}
+
+.gallery img{
+    box-shadow:0 0 15px rgba(0,170,255,0.5);
+}

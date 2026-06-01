@@ -243,3 +243,17 @@ footer{
     background:rgba(255,255,255,0.85);
     color:#111111;
 }
+.light-mode nav ul li a{
+    color:#111111 !important;
+}
+
+.light-mode nav ul li a:hover{
+    color:#00aaff !important;
+}
+.light-mode header{
+    background:#ffffff;
+}
+
+.light-mode .logo{
+    color:#0077cc;
+}
